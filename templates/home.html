@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Boggle Home</title>
+    <link rel="stylesheet" href="static/app.css">
+</head>
+<body>
+    <h1>Boggle Game Board</h1>
+        <table>
+            {% for row in board %}
+              <tr>{{row}}</tr>
+              {% for letter in row %}
+              <td>{{letter}}</td>
+              {% endfor %}
+            {% endfor %}
+        </table>
+
+    <br>
+    <p>High Score: 
+        <b>{{ highscore }}</b> 
+        in {{ nplays }} plays
+      </p>
+
+      <p>
+        Score: <b class="score">0</b>
+        Seconds Left: <b class="timer"></b>
+      </p>
+
+      <form method="post" class="add-word">
+        <input name="word" class="word" autofocus>
+        <button>Enter</button>
+      </form>
+
+      <p class="msg">
+        <!-- our JS will put messages here dynamically -->
+      </p>
+
+      <ul class="words">
+        <!-- our JS will put words here as they score -->   
+      </ul>
+
+    <script src="https://unpkg.com/axios/dist/axios.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="static/app.js"></script>
+    <script>
+        let game = new BoggleGame("boggle", 60);
+      </script>
+
+</body>
+</html>

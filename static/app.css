@@ -1,0 +1,11 @@
+td {
+	border: 3px solid bisque;
+}
+table {
+	width: 500px;
+	height: 500px;
+	text-align: center;
+	border-collapse: collapse;
+	background-color: cadetblue;
+	color: cornsilk;
+}
